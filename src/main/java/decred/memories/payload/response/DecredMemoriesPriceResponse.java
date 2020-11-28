@@ -8,7 +8,6 @@ public class DecredMemoriesPriceResponse {
 	private String dateForPrice;
 	private Integer window;
 	
-	
 	public DecredMemoriesPriceResponse() {}
 
 	public DecredMemoriesPriceResponse(Integer buyedTickets, Long ticketPrice, Long timeInSeconds, String dateForPrice,
