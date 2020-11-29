@@ -1,5 +1,6 @@
 package decred.memories.payload.response;
 
+import java.util.Map;
 import java.util.List;
 import java.math.BigDecimal;
 
@@ -15,10 +16,13 @@ public class CoinMarketCapDataResponse {
     private BigDecimal max_supply;
     private BigDecimal circulating_supply;
     private BigDecimal total_supply;
-    private String platform;
+    private CoinMarketCapPlatformResponse platform;
     private Integer cmc_rank;
     private String last_updated;
-    private CoinMarketCapQuoteResponse quote;
+    
+    /*private CoinMarketCapQuoteResponse quote;*/
+    
+    private Map<String, Object> quote;
     
     public CoinMarketCapDataResponse() {}
 
@@ -102,11 +106,11 @@ public class CoinMarketCapDataResponse {
 		this.total_supply = total_supply;
 	}
 
-	public String getPlatform() {
+	public CoinMarketCapPlatformResponse getPlatform() {
 		return platform;
 	}
 
-	public void setPlatform(String platform) {
+	public void setPlatform(CoinMarketCapPlatformResponse platform) {
 		this.platform = platform;
 	}
 
@@ -126,11 +130,11 @@ public class CoinMarketCapDataResponse {
 		this.last_updated = last_updated;
 	}
 
-	public CoinMarketCapQuoteResponse getQuote() {
+	public Map<String, Object> getQuote() {
 		return quote;
 	}
 
-	public void setQuote(CoinMarketCapQuoteResponse quote) {
+	public void setQuote(Map<String, Object> quote) {
 		this.quote = quote;
-	}  
+	}
 }

@@ -8,9 +8,13 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import com.decred.memories.service.CoinMarketCapService;
 import decred.memories.payload.response.CoinMarketCapLastPricesResponse;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
@@ -27,21 +31,29 @@ public class CoinMarketCapServiceImpl implements CoinMarketCapService {
 	
 	public CoinMarketCapLastPricesResponse retirveLatestPrices() {
 
+		CoinMarketCapLastPricesResponse coinMarketCapLastPricesResponse = null;
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.set("X-CMC_PRO_API_KEY", cmcApiKey);
 		
-		headers.setContentType(MediaType.APPLICATION_JSON);
-	    headers.set("x-api-key", cmcApiKey);
-	    
 	    HttpEntity<?> request = new HttpEntity<String>("", headers);
 
-		ResponseEntity<CoinMarketCapLastPricesResponse> responseEntity = restTemplate.exchange(
-				MessageFormat.format(cmcApiUrl, 1, 100, "USD"), HttpMethod.GET, request,CoinMarketCapLastPricesResponse.class);
+		ResponseEntity<String> responseEntity = restTemplate.exchange(
+				MessageFormat.format(cmcApiUrl, 1, 100, "USD"), HttpMethod.GET, request, String.class);
 		
-		return responseEntity.getBody();
+		try {
+			coinMarketCapLastPricesResponse = this.objectMapper.readValue(responseEntity.getBody(), CoinMarketCapLastPricesResponse.class);
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return coinMarketCapLastPricesResponse;
 		
 	}
 }
