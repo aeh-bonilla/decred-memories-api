@@ -1,4 +1,4 @@
-package decred.memories.payload.response;
+package com.decred.memories.payload.response;
 
 public class CoinMarketCapStatusResponse {
 

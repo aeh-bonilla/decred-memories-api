@@ -2,6 +2,8 @@ package com.decred.memories.service.impl;
 
 import java.util.List;
 import java.text.MessageFormat;
+
+import com.decred.memories.payload.response.NewsResponse;
 import com.decred.memories.service.NewsService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -13,7 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import decred.memories.payload.response.NewsResponse;
 
 @Service
 public class NewsServiceImpl implements NewsService{

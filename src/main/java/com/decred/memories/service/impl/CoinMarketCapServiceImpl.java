@@ -10,9 +10,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import com.decred.memories.service.CoinMarketCapService;
-import decred.memories.payload.response.CoinMarketCapLastPricesResponse;
 
+import com.decred.memories.payload.response.CoinMarketCapLastPricesResponse;
+import com.decred.memories.service.CoinMarketCapService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

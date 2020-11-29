@@ -10,8 +10,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+
+import com.decred.memories.payload.response.DecredMemoriesPriceResponse;
 import com.decred.memories.service.DcrdataChartService;
-import decred.memories.payload.response.DecredMemoriesPriceResponse;
 
 /**
 *

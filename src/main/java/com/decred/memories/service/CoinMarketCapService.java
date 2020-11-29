@@ -1,6 +1,6 @@
 package com.decred.memories.service;
 
-import decred.memories.payload.response.CoinMarketCapLastPricesResponse;
+import com.decred.memories.payload.response.CoinMarketCapLastPricesResponse;
 
 public interface CoinMarketCapService {
 

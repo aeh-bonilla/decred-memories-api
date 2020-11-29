@@ -8,9 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.decred.memories.payload.response.CoinMarketCapLastPricesResponse;
 import com.decred.memories.service.CoinMarketCapService;
 import org.springframework.beans.factory.annotation.Autowired;
-import decred.memories.payload.response.CoinMarketCapLastPricesResponse;
 
 /**
 *

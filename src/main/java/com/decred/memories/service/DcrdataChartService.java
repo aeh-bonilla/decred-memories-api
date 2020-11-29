@@ -1,7 +1,8 @@
 package com.decred.memories.service;
 
 import java.util.List;
-import decred.memories.payload.response.DecredMemoriesPriceResponse;
+
+import com.decred.memories.payload.response.DecredMemoriesPriceResponse;
 
 public interface DcrdataChartService {
 	
