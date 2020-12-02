@@ -1,5 +1,6 @@
 package com.decred.memories.payload.response;
 
+import java.math.BigDecimal;
 import java.io.Serializable;
 import java.util.List;
 
@@ -7,26 +8,26 @@ public class TicketPriceChartResponse implements Serializable {
 	
 	private static final long serialVersionUID = 1020901852840156353L;
 	
-	private List<Integer> count;
-	private List<Long> price;
+	private List<Long> count;
+	private List<BigDecimal> price;
 	private List<Long> t;
 	private Integer window;
 	
 	public TicketPriceChartResponse() {}
 
-	public List<Integer> getCount() {
+	public List<Long> getCount() {
 		return count;
 	}
 
-	public void setCount(List<Integer> count) {
+	public void setCount(List<Long> count) {
 		this.count = count;
 	}
 
-	public List<Long> getPrice() {
+	public List<BigDecimal> getPrice() {
 		return price;
 	}
 
-	public void setPrice(List<Long> price) {
+	public void setPrice(List<BigDecimal> price) {
 		this.price = price;
 	}
 

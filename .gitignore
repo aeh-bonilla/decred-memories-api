@@ -37,3 +37,4 @@ mvnw.cmd
 
 ### Properties ###
 src/main/resources/application-loc.properties
+src/main/resources/application-dev.properties
