@@ -8,4 +8,5 @@ public interface DcrdataChartService {
 	
    public List<DecredMemoriesPriceResponse>  getTicketPrices();
    
+   public List<DecredMemoriesPriceResponse>  getTicketPricesByPeriod(String startingDate, String endingDate);
 }

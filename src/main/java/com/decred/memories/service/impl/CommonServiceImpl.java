@@ -28,8 +28,6 @@ public class CommonServiceImpl implements CommonService {
 				
 		while(!isEndDate) {
 			
-			c.add(Calendar.DATE, k);
-			
 			Date currentDate = new Date(c.getTimeInMillis());  
 			
 			if(currentDate.compareTo(endDate) <= 0) {
@@ -37,7 +35,7 @@ public class CommonServiceImpl implements CommonService {
 		      Event event = new Event();
 				
 		      event.setId(IdGenerator.nextId());
-			  event.setEventDate(new Date());			
+			  event.setEventDate(currentDate);			
 			  event.setCreatedDate(new Date());
 			  event.setActive(1);
 				
@@ -45,10 +43,13 @@ public class CommonServiceImpl implements CommonService {
 				
 			}else {
 			  isEndDate= true;
-			}			
+			}		
+			
+			c.add(Calendar.DATE, 1);
+			
 			k++;
 		}
 		
-		return totalEvents;
+		return k;
 	}
 }

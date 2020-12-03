@@ -6,17 +6,19 @@ public class DecredMemoriesPriceResponse {
 
 	private Long buyedTickets;
 	private BigDecimal ticketPrice;
+	private BigDecimal ticketPriceInDcr;
 	private Long timeInSeconds;
 	private String dateForPrice;
 	private Integer window;
 	
 	public DecredMemoriesPriceResponse() {}
 
-	public DecredMemoriesPriceResponse(Long buyedTickets, BigDecimal ticketPrice, Long timeInSeconds,
-			String dateForPrice, Integer window) {
+	public DecredMemoriesPriceResponse(Long buyedTickets, BigDecimal ticketPrice, BigDecimal ticketPriceInDcr,
+			Long timeInSeconds, String dateForPrice, Integer window) {
 		super();
 		this.buyedTickets = buyedTickets;
 		this.ticketPrice = ticketPrice;
+		this.ticketPriceInDcr = ticketPriceInDcr;
 		this.timeInSeconds = timeInSeconds;
 		this.dateForPrice = dateForPrice;
 		this.window = window;
@@ -60,5 +62,13 @@ public class DecredMemoriesPriceResponse {
 
 	public void setWindow(Integer window) {
 		this.window = window;
+	}
+
+	public BigDecimal getTicketPriceInDcr() {
+		return ticketPriceInDcr;
+	}
+
+	public void setTicketPriceInDcr(BigDecimal ticketPriceInDcr) {
+		this.ticketPriceInDcr = ticketPriceInDcr;
 	}
 }
