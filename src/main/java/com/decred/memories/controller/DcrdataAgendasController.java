@@ -2,10 +2,9 @@ package com.decred.memories.controller;
 
 import java.text.ParseException;
 import java.util.List;
-
 import com.decred.memories.payload.response.DecredMemoriesAgendaResponse;
 import com.decred.memories.service.DcrdataAgendaService;
-
+import com.decred.memories.service.DcrdataAgendaService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

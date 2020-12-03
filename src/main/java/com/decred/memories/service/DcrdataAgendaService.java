@@ -1,4 +1,3 @@
-
 package com.decred.memories.service;
 
 import java.util.List;

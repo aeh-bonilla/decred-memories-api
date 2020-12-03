@@ -4,7 +4,8 @@ import com.decred.memories.payload.response.AgendasResponse;
 import com.decred.memories.payload.response.DecredMemoriesAgendaResponse;
 import com.decred.memories.service.DcrdataAgendaService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import com.decred.memories.service.DcrdataAgendaService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -48,13 +49,11 @@ public class DcrdataAgendaServiceImpl implements DcrdataAgendaService {
 		   for(int i = 0; i < size; i++) {
 			   String start = response.get(i).getStarttime();
 			   String expire = response.get(i).getExpiretime();
-//
-//				if (dateCompare(start,date) || dateCompare(expire,date)) {
+
 					DecredMemoriesAgendaResponse decredMemoriesAgendaResponse = new DecredMemoriesAgendaResponse(response.get(i).getName(),
-							response.get(i).getDescription(),response.get(i).getStatus(),start,expire);
+							response.get(i).getDescription(),response.get(i).getStatus(),start, expire);
 
 					decredMemoriesAgendaResponseList.add(decredMemoriesAgendaResponse);
-//				}
 		   }
 	   }
 	
